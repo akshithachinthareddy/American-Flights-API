@@ -1,0 +1,27 @@
+{
+  "dependencies": [
+    {
+      "version": "1.0.1",
+      "assetId": "training-american-flight-data-type",
+      "groupId": "68ef9520-24e9-4cf2-b2f5-620025690913",
+      "provided": false
+    },
+    {
+      "version": "1.0.1",
+      "assetId": "training-american-flights-example",
+      "groupId": "68ef9520-24e9-4cf2-b2f5-620025690913",
+      "provided": false
+    }
+  ],
+  "version": "1.0.4",
+  "descriptorVersion": "1.0.0",
+  "classifier": "raml",
+  "main": "american-flights-api.raml",
+  "assetId": "american-flights-api",
+  "groupId": "de15ad10-b837-4393-bbab-64fb8591b9e5",
+  "name": "American flights API",
+  "organizationId": "de15ad10-b837-4393-bbab-64fb8591b9e5",
+  "apiVersion": "v1",
+  "tags": [],
+  "originalFormatVersion": "1.0"
+}

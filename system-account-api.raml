@@ -1,0 +1,80 @@
+#%RAML 1.0
+title: account-api
+
+/accounts:
+  get:
+    description: Retrieve customer accounts
+    queryParameters:
+      personOrSystem: 
+        type: string
+        required: true
+        description: The person or system requesting the data
+      accountType:
+        type: string
+        description: An optional account type to fetch personal or business accounts
+      name:
+        type: string
+        description: An optional name to identify the accounts belonging to a particular customer
+    responses:
+      200:
+        description: Successful response
+        body:
+          application/json:
+            example: |
+              [
+                {
+                  ID: 1,
+                  Name: "John Doe",
+                  Type: "personal",
+                  Address: "12345 Green St, Boulder, Colorado, 82433, USA",
+                  Air Miles: 1000,
+                  Creation Date: "2023-10-24T08:00:00Z"
+                },
+                {
+                  ID: 2,
+                  Name: "ABC Inc.",
+                  Type: "business",
+                  Address: "54321 Main St, Denver, Colorado, 80201, USA",
+                  Air Miles: 5000,
+                  Creation Date: "2023-10-25T09:30:00Z"
+                }
+              }
+
+  post:
+    description: Create customer accounts
+    body:
+      application/json:
+        example: |
+          [
+            {
+              Name: "Jane Smith",
+              Type: "personal",
+              Address: "9876 Oak St, New York, New York, 10001, USA",
+              Air Miles: 2500
+            },
+            {
+              Name: "XYZ Corp.",
+              Type: "business",
+              Address: "4567 Elm St, San Francisco, California, 94101, USA",
+              Air Miles: 7500
+            }
+          ]
+    responses:
+      200:
+        description: Successful response
+        body:
+          application/json:
+            example: |
+              {
+                "message": "Accounts created"
+              }
+
+types:
+  Account:
+    properties:
+      ID: integer
+      Name: string
+      Type: string
+      Address: string
+      Air Miles: integer
+      Creation Date: datetime
